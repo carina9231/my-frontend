@@ -54,7 +54,7 @@
         })
 
         function save() {
-            var form_data = new FormData($('#upload-file')[0]);
+            let form_data = new FormData($('#upload-file')[0]);
             $.ajax({
                 type: 'POST',
                 url: 'http://pythonapp-env.eba-zsrusgez.ap-northeast-2.elasticbeanstalk.com/fileupload',
@@ -62,7 +62,7 @@
                 processData: false,
                 contentType: false,
                 success: function (data) {
-                    alert("파일이 업로드 되었습니다!!");
+                    alert(data["result"])
                     location.reload();
                 },
             });
